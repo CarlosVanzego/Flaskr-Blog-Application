@@ -40,6 +40,7 @@ sqlite3.register_converter(
 
 
 def init_app(app):
+    """Takes the init_app application and does the registration."""
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
 
